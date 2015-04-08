@@ -83,7 +83,7 @@ var StreamSet = function (a, b, toKey) {
 
 util.inherits(StreamSet, Readable)
 
-StreamSet.prototype.setFunction = function (keys, vals, consumes) {
+StreamSet.prototype.next = function (keys, vals, consumes) {
     var self = this
     console.error('read unimplemented!')
     this.emit('error', new Error('Must implement read'))
@@ -96,7 +96,7 @@ StreamSet.prototype._read = function () {
       var keys = {a: keyA, b: keyB}
       var vals = {a: valA, b: valB}
       var consumes = {a: consumeA, b: consumeB}
-      self.setFunction(keys, vals, consumes)
+      self.next(keys, vals, consumes)
     })
   })
 }
