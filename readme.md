@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/sorted-set-stream.png)](https://nodei.co/npm/sorted-set-stream/)
 
-A utility module to manipulate two streams as sorted sets.
+A utility module to manipulate two streams as sorted sets. The streams must be sorted lexigraphically.
 
 Example use case for union:
 
