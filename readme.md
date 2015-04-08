@@ -4,40 +4,5 @@
 
 A utility module to manipulate two streams as sorted sets. The streams must be sorted lexigraphically.
 
-Example use case for union:
-
-```js
-var SetStream = require('sorted-set-stream')
-
-function Union (a, b, toKey) {
-  var stream = SetStream(a, b, toKey)
-  stream.next = function (keys, vals, consumes) {
-    var self = this
-    if (!vals || (!vals.a && !vals.b)) return self.push(null)
-
-    if (!vals.a) {
-      consumes.b()
-      return self.push(vals.b)
-    }
-
-    if (!vals.b) {
-      consumes.a()
-      return self.push(vals.a)
-    }
-
-    if (keys.a === keys.b) {
-      consumes.b()
-      return self._read()
-    }
-
-    if (keys.a < keys.b) {
-      consumes.a()
-      return self.push(vals.a)
-    }
-
-    consumes.b()
-    self.push(vals.b)
-  }
-  return stream
-}
-```
+Example use cases:
+  * https://github.com/mafintosh/sorted-union-stream
