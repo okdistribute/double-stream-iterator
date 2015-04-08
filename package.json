@@ -1,6 +1,6 @@
 {
   "name": "sorted-set-stream",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "for manipulating streams as sorted sets",
   "main": "index.js",
   "scripts": {
