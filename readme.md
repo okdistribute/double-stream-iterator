@@ -1,6 +1,6 @@
-# sorted-set-stream
+# double-stream-iterator
 
-[![NPM](https://nodei.co/npm/sorted-set-stream.png)](https://nodei.co/npm/sorted-set-stream/)
+[![NPM](https://nodei.co/npm/double-stream-iterator.png)](https://nodei.co/npm/double-stream-iterator/)
 
 A utility module to manipulate two streams as sorted sets. The streams must be sorted lexigraphically.
 

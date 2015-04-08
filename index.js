@@ -6,8 +6,8 @@ var destroy = function (stream) {
   if (stream.readable && stream.destroy) stream.destroy()
 }
 
-var StreamSet = function (a, b) {
-  if (!(this instanceof StreamSet)) return new StreamSet(a, b)
+var DoubleStreamIterator = function (a, b) {
+  if (!(this instanceof DoubleStreamIterator)) return new DoubleStreamIterator(a, b)
   Readable.call(this, {objectMode: true, highWaterMark: 16})
 
   this._destroyed = false
@@ -17,15 +17,14 @@ var StreamSet = function (a, b) {
   this._readA = iterate(a)
   this._readB = iterate(b)
 }
+util.inherits(DoubleStreamIterator, Readable)
 
-util.inherits(StreamSet, Readable)
-
-StreamSet.prototype.next = function (err, consumes) {
+DoubleStreamIterator.prototype.next = function (err, consumes) {
   var self = this
   this.emit('error', new Error('Must implement next'))
 }
 
-StreamSet.prototype._read = function () {
+DoubleStreamIterator.prototype._read = function () {
   var self = this
   self._readA(function (err, dataA, nextA) {
     if (err) return self.next(err, data, nextA)
@@ -36,7 +35,7 @@ StreamSet.prototype._read = function () {
   })
 }
 
-StreamSet.prototype.destroy = function (err) {
+DoubleStreamIterator.prototype.destroy = function (err) {
   if (this._destroyed) return
   this._destroyed = true
   destroy(this._a)
@@ -45,4 +44,4 @@ StreamSet.prototype.destroy = function (err) {
   this.emit('close')
 }
 
-module.exports = StreamSet
+module.exports = DoubleStreamIterator

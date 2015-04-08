@@ -1,26 +1,30 @@
 {
-  "name": "sorted-set-stream",
-  "version": "2.0.1",
-  "description": "for manipulating streams as sorted sets",
+  "name": "double-stream-iterator",
+  "version": "1.0.0",
+  "description": "for iterating over two streams at once",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/karissa/sorted-set-stream.git"
+    "url": "https://github.com/karissa/double-stream-iterator.git"
   },
   "keywords": [
     "set",
-    "sorted",
-    "stream"
+    "stream",
+    "iterator",
+    "double",
+    "two",
+    "loop",
+    "streams"
   ],
   "author": "Karissa McKelvey <karissa@karissamck.com> (http://karissamck.com/)",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/karissa/sorted-set-stream/issues"
+    "url": "https://github.com/karissa/double-stream-iterator/issues"
   },
-  "homepage": "https://github.com/karissa/sorted-set-stream",
+  "homepage": "https://github.com/karissa/double-stream-iterator",
   "dependencies": {
     "readable-stream": "^1.0.33",
     "stream-iterate": "^1.0.1"
