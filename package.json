@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/karissa/sorted-set-stream/issues"
   },
-  "homepage": "https://github.com/karissa/sorted-set-stream"
+  "homepage": "https://github.com/karissa/sorted-set-stream",
+  "dependencies": {
+    "readable-stream": "^1.0.33"
+  }
 }
