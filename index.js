@@ -22,8 +22,7 @@ util.inherits(StreamSet, Readable)
 
 StreamSet.prototype.next = function (err, consumes) {
   var self = this
-  console.error('read unimplemented!')
-  this.emit('error', new Error('Must implement read'))
+  this.emit('error', new Error('Must implement next'))
 }
 
 StreamSet.prototype._read = function () {
@@ -31,7 +30,7 @@ StreamSet.prototype._read = function () {
   self._readA(function (err, dataA, nextA) {
     if (err) return self.next(err, data, nextA)
     self._readB(function (err, dataB, nextB) {
-      if (err) return self.next(err, data, nextA)
+      if (err) return self.next(err, data, nextB)
       self.next(null, dataA, dataB, nextA, nextB)
     })
   })
